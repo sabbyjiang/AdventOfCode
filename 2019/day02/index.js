@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 let text = fs.readFileSync('./input.txt', 'utf8');
-const inputForPartOne = text.split(',').map((num) => Number(num));
+const input = text.split(',').map((num) => Number(num));
 
 const OPERATION_CODES = {
   HALT: 99,
@@ -43,4 +43,4 @@ const intCalculator = (input) => {
   return outputArray;
 }
 
-console.log(intCalculator(inputForPartOne)[0])
+console.log(intCalculator(input)[0])
