@@ -44,3 +44,31 @@ const intCalculator = (input, optionOne, optionTwo) => {
 }
 
 console.log(intCalculator(input, 12, 2)[0])
+
+// Part II
+const OUTPUT = 19690720;
+
+const findInputsForOutput = (input, targetOutput) => {
+  let notFound  = true
+  let optionOne = 0;
+  let optionTwo;
+
+  while (notFound) {
+    optionTwo = 0;
+    while(optionTwo <= 99 && notFound){
+      let testOutput = intCalculator(input, optionOne, optionTwo)[0];
+      if(testOutput === targetOutput){
+        notFound = false;
+      } else {
+        optionTwo++;
+      }
+    }
+    if(notFound){
+      optionOne++;
+    }
+  }
+
+  return optionOne * 100 + optionTwo;
+}
+
+console.log(findInputsForOutput(input, OUTPUT));
