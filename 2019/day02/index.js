@@ -9,10 +9,10 @@ const OPERATION_CODES = {
   MULTIPLY: 2
 }
 
-const intCalculator = (input) => {
+const intCalculator = (input, optionOne, optionTwo) => {
   let outputArray = JSON.parse(JSON.stringify(input));
-  outputArray[1] = 12;
-  outputArray[2] = 2;
+  outputArray[1] = optionOne;
+  outputArray[2] = optionTwo;
   let i = 0;
   let halt = false;
   while(!halt) {
@@ -43,4 +43,4 @@ const intCalculator = (input) => {
   return outputArray;
 }
 
-console.log(intCalculator(input)[0])
+console.log(intCalculator(input, 12, 2)[0])
