@@ -21,7 +21,7 @@ const isValidPassword = (number) => {
 
   let countsDict = _.countBy(numberAsArr, (val) => val);
   let onlyDouble = _.includes(countsDict, 2)
-  return hasDouble && neverDecreases;
+  return hasDouble && neverDecreases && onlyDouble;
 }
 
 for(let num = lowerBound; num <= upperBound; num++){
